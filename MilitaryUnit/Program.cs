@@ -8,14 +8,34 @@ namespace MilitaryUnit
 {
     class Program
     {
-        static void Main(string[] args)
+        static void UnitBuild()
         {
-            // The code provided will print ‘Hello World’ to the console.
-            // Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
-            Console.WriteLine("Hello World!");
-            Console.ReadKey();
+            Console.WriteLine("This is your new unit.");
 
-            // Go to http://aka.ms/dotnet-get-started-console to continue learning how to build a console app! 
+            
+            Platoon myplatoon = new Platoon();
+            myplatoon.Company("A");
+
+            
+            Personnel myPersonnel = new Personnel();
+            myPersonnel.PersonnelNumber();
+            
+            Vehicles myVehicles = new Vehicles();
+            myVehicles.VehiclesNumber();
+
+            Weapons myWeapons = new Weapons();
+            myWeapons.WeaponsNumber();
+        }
+        static void Main()
+        {
+            try
+            {
+                UnitBuild();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception: {0}", ex.Message);
+            }
         }
     }
 }
